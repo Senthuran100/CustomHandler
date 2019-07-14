@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxy xmlns="http://ws.apache.org/ns/synapse"
+       name="sampleprogram"
+       transports="http https"
+       startOnLoad="true">
+   <description/>
+   <target>
+      <inSequence>
+         <log level="full"/>
+         <send>
+            <endpoint>
+               <address uri="http://www.mocky.io/v2/5d20c3243000003954bb0b87"/>
+            </endpoint>
+         </send>
+      </inSequence>
+      <outSequence>
+         <class name="com.senthuran.sample.Mediator"/>
+         <send/>
+      </outSequence>
+   </target>
+</proxy>
